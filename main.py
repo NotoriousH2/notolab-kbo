@@ -5,7 +5,7 @@ from database import SessionLocal, engine
 import models
 from pydantic import BaseModel
 from datetime import datetime
-from .schemas import ConversationCreate, Conversation, MessageCreate
+from schemas import ConversationCreate, Conversation, MessageCreate
 app = FastAPI()
 
 models.Base.metadata.create_all(bind=engine)
