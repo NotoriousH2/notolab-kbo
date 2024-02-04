@@ -1,0 +1,1 @@
+curl -X POST https://notolab.64bit.kr/conversations -H "Content-Type: application/json" -d '{  "conversationId": "conv12345",  "messages": [    {      "sender": "user1",      "message": "Hello, how are you?",      "timestamp": "2022-01-01T12:00:00Z"    },   {      "sender": "user2",      "message": "I'm good, thanks! And you?",      "timestamp": "2022-01-01T12:01:00Z"    } ]}'

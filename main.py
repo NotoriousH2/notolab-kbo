@@ -19,7 +19,9 @@ def get_db():
         db.close()
 
 # 여기에 Pydantic 스키마 정의를 포함시킵니다.
-
+@app.get("/")
+async def root():
+    return {"message": "Welcome to my API!"}
 @app.post("/conversations/", response_model=Conversation, status_code=status.HTTP_201_CREATED)
 async def saveConversation(conversation: ConversationCreate, db: Session = Depends(get_db)):
     db_conversation = models.Conversation(conversationId=conversation.conversationId)
