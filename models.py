@@ -5,7 +5,7 @@ from database import Base
 class Conversation(Base):
     __tablename__ = "conversations"
     id = Column(Integer, primary_key=True, index=True)
-    conversationId = Column(String, unique=True, index=True)
+    conversationId = Column(String, index=True)
     messages = relationship("Message", back_populates="conversation")
 
 class Message(Base):
