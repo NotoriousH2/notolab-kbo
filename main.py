@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 from typing import List
 from database import SessionLocal, engine
@@ -7,7 +8,7 @@ from pydantic import BaseModel
 from datetime import datetime
 from schemas import ConversationCreate, Conversation, MessageCreate
 app = FastAPI()
-
+app.mount("/static", StaticFiles(directory="static"), name="static")
 models.Base.metadata.create_all(bind=engine)
 
 # Dependency
